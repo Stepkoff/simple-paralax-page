@@ -1,0 +1,87 @@
+@use 'sass:math'
+@import 'fonts'
+@import "mixins"
+$index: calc(1vw + 1vh)
+*,
+*::before,
+*::after
+  margin: 0
+  padding: 0
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+html, body
+  font-family: Raleway-regular, sans-serif
+  background-color: #010101
+  line-height: 1.5
+  color: #e7e7e0
+.header
+  position: relative
+  &:after
+    content: ''
+    position: absolute
+    z-index: 50
+    width: 100%
+    height: calc($index * 10)
+    background-image: url("../../build/img/ground.png")
+    background-repeat: no-repeat
+    background-position: center
+    background-size: cover
+    top: 100%
+    transform: translateY(-55%)
+  .layers
+    height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    overflow: hidden
+    position: relative
+    .layers__header
+      position: absolute
+      width: 100%
+      height: 100vh
+      z-index: 2
+      display: flex
+      justify-content: center
+      align-items: center
+      flex-direction: column
+      text-transform: uppercase
+      font-family: Raleway-Black, sans-serif
+      margin-top: calc($index * -1)
+      text-shadow: 0 0 15px #9d822b
+      .layers__caption
+        font-size: calc($index * 1.175)
+        letter-spacing: calc($index / 2.25)
+      .layers__title
+        font-size: calc($index * 2.5)
+        letter-spacing: calc($index / 2.25)
+    .layer
+      height: 100%
+      width: 100%
+      position: absolute
+      background-size: cover
+      background-position: center
+      background-repeat: no-repeat
+      will-change: transform
+    .layers-base
+      z-index: 1
+    .layers-middle
+      z-index: 3
+    .layers-front
+      z-index: 4
+.main-article
+  height: 100vh
+  background-repeat: no-repeat
+  background-size: cover
+  background-position: center
+  display: flex
+  justify-content: center
+  align-items: center
+
+  .main-article__content
+    max-width: calc($index * 28)
+    text-align: center
+    .main-article__header
+      margin: 0 0 10px 0
+      font-family: Raleway-Black, sans-serif
+      text-transform: uppercase
+    //.main-article__paragraph
